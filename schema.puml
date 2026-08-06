@@ -1,6 +1,5 @@
 @startuml
 
-
 enum museum_type {
   ART
   HISTORY
