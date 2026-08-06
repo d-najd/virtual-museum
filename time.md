@@ -17,3 +17,5 @@
 40 min adding artwork routes
 
 30 min seed data
+
+10 min final tweaks and bugfixes
