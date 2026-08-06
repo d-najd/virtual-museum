@@ -15,7 +15,7 @@ entity museum {
     description: string (md)
     city: string
     address: string
-    conver_image_url: string
+    cover_image_url: string
     type: museum_type
 }
 

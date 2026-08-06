@@ -1,6 +1,7 @@
 import { postRouter } from "~/server/api/routers/post"
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc"
 import { museumRouter } from "./routers/museum"
+import { artworkRouter } from "./routers/artwork"
 
 /**
  * This is the primary router for your server.
@@ -10,6 +11,7 @@ import { museumRouter } from "./routers/museum"
 export const appRouter = createTRPCRouter({
 	post: postRouter,
    museum: museumRouter,
+   artwork: artworkRouter,
 })
 
 // export type definition of API

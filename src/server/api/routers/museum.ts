@@ -6,10 +6,10 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc"
 export const museumSearchSchema = z
 	.object({
 		query: z.string().optional(),
-		city: z.string().optional(),
-		type: z.nativeEnum(MuseumType).optional(),
-		authorName: z.string().optional(),
-		artworkTitle: z.string().optional(),
+		// city: z.string().optional(),
+		// type: z.nativeEnum(MuseumType).optional(),
+		// authorName: z.string().optional(),
+		// artworkTitle: z.string().optional(),
 	})
 	.optional()
 
