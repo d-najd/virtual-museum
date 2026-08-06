@@ -9,7 +9,7 @@ import { useParams } from "next/navigation"
 
 export default function MuseumArtworks() {
 	const params = useParams<{ id: string }>()
-	const museumId = params.id 
+	const museumId = params.id
 
 	const [searchQuery, setSearchQuery] = useState("")
 
@@ -17,7 +17,10 @@ export default function MuseumArtworks() {
 		data: artworks,
 		isLoading,
 		isError,
-	} = api.artwork.getAll.useQuery({museumId: parseInt(museumId), query: searchQuery})  
+	} = api.artwork.getAll.useQuery({
+		museumId: parseInt(museumId),
+		query: searchQuery,
+	})
 
 	return (
 		<div className="min-h-screen bg-slate-50 px-4 py-12 text-slate-900 sm:px-6 lg:px-8 dark:bg-slate-950 dark:text-slate-100">
@@ -72,6 +75,7 @@ export default function MuseumArtworks() {
 								title={artwork.title}
 								imageUrl={artwork.coverImageUrl}
 								description={artwork.description}
+								footerText={`${artwork.author.firstName} ${artwork.author.lastName}`}
 							/>
 						))}
 					</div>

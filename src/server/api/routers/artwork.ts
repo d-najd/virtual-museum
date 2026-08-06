@@ -21,8 +21,8 @@ export const artworkRouter = createTRPCRouter({
 				const query = input.query.trim()
 				whereConditions.push({
 					OR: [
-						{ title: query },
-						{ description: query },
+						{ title: { contains: query } },
+						{ description: { contains: query } },
 						{
 							author: {
 								OR: [
@@ -36,8 +36,8 @@ export const artworkRouter = createTRPCRouter({
 			}
 
 			return ctx.db.artwork.findMany({
-				where:
-					whereConditions.length > 0 ? { AND: whereConditions } : {},
+				where: { AND: whereConditions },
+				include: { author: true },
 			})
 		}),
 	getOne: publicProcedure

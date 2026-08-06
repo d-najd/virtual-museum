@@ -12,8 +12,8 @@
 
 40 min artwork backend
 
-15 min bugfixing refactoring 
+15 min bugfixing refactoring
 
 40 min adding artwork routes
 
-
+30 min seed data
