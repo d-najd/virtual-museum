@@ -1,0 +1,59 @@
+@startuml
+
+
+enum museum_type {
+  ART
+  HISTORY
+  SCIENCE
+  ARCHAEOLOGY
+  NATURAL_HISTORY
+  TECHNOLOGY
+}
+
+entity museum {
+    id: int <<PK>>
+    name: string
+    description: string (md)
+    city: string
+    address: string
+    conver_image_url: string
+    type: museum_type
+}
+
+entity artwork {
+    id: int <<PK>>
+    museum_id: int <<FK>>
+    title: string
+    description: string (md)
+    ' tags, year, active
+}
+
+entity artwork_author {
+    artwork_id: int <<FK>>
+    author_id: int <<FK>>
+    ---
+    <<PK>>
+    (artwork_id, author_id)
+}
+
+entity author {
+    id: int <<PK>>
+    first_name: string
+    last_name: string
+}
+
+entity artwork_media {
+    artwork_id: int <<FK>>
+    position: int <<FK>>
+    media_url: string
+    ---
+    <<PK>>
+    (artwork_id, position)
+}
+
+museum "1" -- "*" artwork
+artwork "1" -- "1..*" artwork_author
+artwork "1" -- "1..*" artwork_media 
+author "1" -- "*" artwork_author
+
+@enduml
