@@ -5,4 +5,9 @@ A comprehensive web-based information system designed to digitize and promote cu
 ## Images
 
 ![Museum Search](./github/1.png)
+
 ![Artwork Search](./github/2.png)
+
+## Note
+
+This is for an university assignment
