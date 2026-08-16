@@ -1,3 +1,5 @@
+'I design schema before developing any application personally and this is that (initial) schema, may not be up to date
+
 @startuml
 
 enum museum_type {
